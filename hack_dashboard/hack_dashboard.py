@@ -12,12 +12,17 @@ st.set_page_config(
 # Initialize DB connection.
 conn = st.experimental_connection('mysql', type='sql')
 # Perform Wines Table query.
-df = conn.query('SELECT * from wines;', ttl=600)
+
+@st.cache_data
+def carregar_wines_table():
+	tabela = conn.query('SELECT * from wines;', ttl=600)
+	return tabela
 
 left_column, right_column = st.columns(2)
 
 with left_column:
 	st.header("Wines Table")
+	df = carregar_wines_table()
 	st.write(df)
 
 with right_column:

@@ -14,7 +14,7 @@ connection = mysql.connector.connect(
 )
 cursor = connection.cursor()
 
-for item in json_data
+for item in json_data:
     store_name = item["store_name"]
     wine_name = item["wine_name"]
     harvest_year = item["harvest_year"]
@@ -24,7 +24,37 @@ for item in json_data
     currency = item["currency"]
     timestamp = item["date_scraping"]
     location = item["location"]
+    # Check if the wine already exists
+    select_wine = ("SELECT wine_id FROM wines WHERE wine_name = '"+wine_name+"\'")
+    cursor.execute(select_wine)
+    row = cursor.fetchone()
 
+    if row:
+        wine_id = row[0]
+    else:
+        # Insert the wine if it doesn't exist
+        insert_wine = ("INSERT INTO wines (wine_name, harvest_year, capacity, location) VALUES ('"+wine_name+"', '"+harvest_year+"', '"+capacity+"', '"+location+"')")
+        cursor.execute(insert_wine)
+        wine_id = cursor.lastrowid
+
+    # Check if the store already exists
+    select_store = ("SELECT store_id FROM stores WHERE store_name = '"+store_name+"\'")
+    cursor.execute(select_store)
+    row = cursor.fetchone()
+
+    if row:
+        store_id = row[0]
+    else:
+        # Insert the store if it doesn't exist
+        insert_store = ("INSERT INTO stores (store_name) VALUES ('"+store_name+"')")
+        cursor.execute(insert_store)
+        st = cursor.lastrowid
+    wine_id = str(wine_id)
+    store_id = str(store_id)
+    print(wine_id)
+    print(store_id)
+    insert = ("INSERT INTO prices (wine_id, store_id, price_value, discount, currency, timestamp) VALUES ('"+wine_id+"' ,'"+store_id+"' ,'"+price_value+"' ,'"+discount+"' ,'"+currency+"' ,'"+timestamp+"')")
+    cursor.execute(insert)
 # Extract the variables from the JSON object
 """ store_name = json_data[0]["store_name"]
 wine_name = json_data[0]["wine_name"]
@@ -35,34 +65,6 @@ discount = json_data[0]["discount"]
 currency = json_data[0]["currency"]
 timestamp = json_data[0]["date_scraping"]
 location = json_data[0]["location"] """
-
-# Check if the wine already exists
-select_wine = ("SELECT wine_id FROM wines WHERE wine_name = '"+wine_name+"\'")
-cursor.execute(select_wine)
-row = cursor.fetchone()
-
-if row:
-    wine_id = row[0]
-else:
-    # Insert the wine if it doesn't exist
-    insert_wine = ("INSERT INTO wines (wine_name, harvest_year, capacity, location) VALUES ('"+wine_name+"', '"+(harvest_year)+"', '"+capacity+"', '"+location+"')")
-    print(insert_wine)
-    cursor.execute(insert_wine)
-    wine_id = cursor.lastrowid
-
-# Check if the store already exists
-select_store = ("SELECT store_id FROM stores WHERE store_name = '"+store_name+"\'")
-cursor.execute(select_store)
-row = cursor.fetchone()
-
-if row:
-    store_id = row[0]
-else:
-    # Insert the store if it doesn't exist
-    insert_store = ("INSERT INTO stores (store_name, store_url) VALUES ('"+store_name+"', '"+store_url+"')")
-    print(insert_store)
-    cursor.execute(insert_store)
-    wine_id = cursor.lastrowid
 
 # Execute the INSERT statement
 

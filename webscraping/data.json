@@ -1,6 +1,6 @@
 [
     {
-        "store_name": "https://www.continente.pt/",
+        "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
         "harvest_year": "",
         "capacity": "750",
@@ -11,80 +11,80 @@
         "location": ""
     },
     {
-        "store_name": "https://www.continente.pt/",
+        "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:28:57",
-        "location": null
+        "location": ""
     },
     {
-        "store_name": "https://www.continente.pt/",
+        "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:29:09",
-        "location": null
+        "location": ""
     },
     {
-        "store_name": "https://www.continente.pt/",
+        "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:31:41",
-        "location": null
+        "location": ""
     },
     {
-        "store_name": "https://www.continente.pt/",
+        "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:32:27",
-        "location": null
+        "location": ""
     },
     {
         "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:34:48",
-        "location": null
+        "location": ""
     },
     {
         "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:40:26",
-        "location": null
+        "location": ""
     },
     {
         "store_name": "Continente",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:43:47",
-        "location": null
+        "location": ""
     }
 ]
