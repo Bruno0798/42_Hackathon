@@ -15,35 +15,35 @@ connection = mysql.connector.connect(
 cursor = connection.cursor()
 
 # Extract the variables from the JSON object
-store_name = json_data["store_name"]
-wine_name = json_data["wine_name"]
-harvest_year = json_data["harvest_year"]
-capacity = json_data["capacity"]
-price_value = json_data["price"]
-discount = json_data["discount"]
-currency = json_data["currency"]
-timestamp = json_data["date_scraping"]
-location = json_data["location"]
-wine_id = row[0]
+store_name = json_data[0]["store_name"]
+wine_name = json_data[0]["wine_name"]
+harvest_year = json_data[0]["harvest_year"]
+capacity = json_data[0]["capacity"]
+price_value = json_data[0]["price"]
+discount = json_data[0]["discount"]
+currency = json_data[0]["currency"]
+timestamp = json_data[0]["date_scraping"]
+location = json_data[0]["location"]
+
 # Check if the wine already exists
-select_wine = "SELECT wine_id FROM wines WHERE wine_name = ?"
-cursor.execute(select_wine, (wine_name,))
+select_wine = ("SELECT wine_id FROM wines WHERE wine_name = '"+wine_name+"\'")
+cursor.execute(select_wine)
 row = cursor.fetchone()
 
 if row:
     wine_id = row[0]
 else:
     # Insert the wine if it doesn't exist
-    insert_wine = "INSERT INTO wines (wine_name, harvest_year, capacity, location) VALUES (?, ?, ?, ?)"
-    values = (wine_name, harvest_year, capacity, location)
-    cursor.execute(insert_wine, values)
+    insert_wine = ("INSERT INTO wines (wine_name, harvest_year, capacity, location) VALUES ('"+wine_name+"', '"+(harvest_year)+"', '"+capacity+"', '"+location+"')")
+    print(insert_wine)
+    cursor.execute(insert_wine)
     wine_id = cursor.lastrowid
 
 # Execute the INSERT statement
 
-insert_prices = "INSERT INTO prices (price_value, discount, store_id, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)"
-values = (price_value, discount, wine_id, store_id, timestamp)
-cursor.execute(insert_prices, values)
+#insert_prices = "INSERT INTO prices (price_value, discount, store_id, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)"
+#values = (price_value, discount, wine_id, store_id, timestamp)
+#cursor.execute(insert_prices, values)
 
 # Commit the changes and close the connection
 connection.commit()

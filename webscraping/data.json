@@ -2,13 +2,13 @@
     {
         "store_name": "https://www.continente.pt/",
         "wine_name": "Mateus Medium Sweet Vinho RosÃ©",
-        "harvest_year": null,
+        "harvest_year": "",
         "capacity": "750",
         "price": "4,49",
-        "discount": null,
+        "discount": "",
         "currency": "EUR",
         "date_scraping": "2023-10-24 15:28:17",
-        "location": null
+        "location": ""
     },
     {
         "store_name": "https://www.continente.pt/",
