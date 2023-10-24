@@ -14,8 +14,19 @@ connection = mysql.connector.connect(
 )
 cursor = connection.cursor()
 
+for item in json_data
+    store_name = item["store_name"]
+    wine_name = item["wine_name"]
+    harvest_year = item["harvest_year"]
+    capacity = item["capacity"]
+    price_value = item["price"]
+    discount = item["discount"]
+    currency = item["currency"]
+    timestamp = item["date_scraping"]
+    location = item["location"]
+
 # Extract the variables from the JSON object
-store_name = json_data[0]["store_name"]
+""" store_name = json_data[0]["store_name"]
 wine_name = json_data[0]["wine_name"]
 harvest_year = json_data[0]["harvest_year"]
 capacity = json_data[0]["capacity"]
@@ -23,7 +34,7 @@ price_value = json_data[0]["price"]
 discount = json_data[0]["discount"]
 currency = json_data[0]["currency"]
 timestamp = json_data[0]["date_scraping"]
-location = json_data[0]["location"]
+location = json_data[0]["location"] """
 
 # Check if the wine already exists
 select_wine = ("SELECT wine_id FROM wines WHERE wine_name = '"+wine_name+"\'")
