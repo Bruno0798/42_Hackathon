@@ -51,8 +51,6 @@ for item in json_data:
         st = cursor.lastrowid
     wine_id = str(wine_id)
     store_id = str(store_id)
-    print(wine_id)
-    print(store_id)
     insert = ("INSERT INTO prices (wine_id, store_id, price_value, discount, currency, timestamp) VALUES ('"+wine_id+"' ,'"+store_id+"' ,'"+price_value+"' ,'"+discount+"' ,'"+currency+"' ,'"+timestamp+"')")
     cursor.execute(insert)
 # Extract the variables from the JSON object

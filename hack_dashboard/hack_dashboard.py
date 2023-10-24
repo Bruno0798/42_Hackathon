@@ -15,15 +15,25 @@ conn = st.experimental_connection('mysql', type='sql')
 
 @st.cache_data
 def carregar_wines_table():
-	tabela = conn.query('SELECT * from wines;', ttl=600)
+	tabela = conn.query('SELECT wine_name, harvest_year, capacity, location from wines;', ttl=600)
 	return tabela
 
 left_column, right_column = st.columns(2)
 
 with left_column:
 	st.header("Wines Table")
-	df = carregar_wines_table()
-	st.write(df)
+	data = carregar_wines_table()
+	df = pd.DataFrame(data)
+	st.dataframe(
+		df,
+		column_config={
+			"wine_name": "Nome",
+			"harvest_year": "Colheita",
+			"capacity": "Capacidade",
+			"location": "Origem"
+		},
+		hide_index=True,
+	)
 
 with right_column:
 	st.header("Details")
