@@ -50,6 +50,20 @@ else:
     cursor.execute(insert_wine)
     wine_id = cursor.lastrowid
 
+# Check if the store already exists
+select_store = ("SELECT store_id FROM stores WHERE store_name = '"+store_name+"\'")
+cursor.execute(select_store)
+row = cursor.fetchone()
+
+if row:
+    store_id = row[0]
+else:
+    # Insert the store if it doesn't exist
+    insert_store = ("INSERT INTO stores (store_name, store_url) VALUES ('"+store_name+"', '"+store_url+"')")
+    print(insert_store)
+    cursor.execute(insert_store)
+    wine_id = cursor.lastrowid
+
 # Execute the INSERT statement
 
 #insert_prices = "INSERT INTO prices (price_value, discount, store_id, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)"
