@@ -48,27 +48,11 @@ for item in json_data:
         # Insert the store if it doesn't exist
         insert_store = ("INSERT INTO stores (store_name) VALUES ('"+store_name+"')")
         cursor.execute(insert_store)
-        st = cursor.lastrowid
+        store_id = cursor.lastrowid
     wine_id = str(wine_id)
     store_id = str(store_id)
     insert = ("INSERT INTO prices (wine_id, store_id, price_value, discount, currency, timestamp) VALUES ('"+wine_id+"' ,'"+store_id+"' ,'"+price_value+"' ,'"+discount+"' ,'"+currency+"' ,'"+timestamp+"')")
     cursor.execute(insert)
-# Extract the variables from the JSON object
-""" store_name = json_data[0]["store_name"]
-wine_name = json_data[0]["wine_name"]
-harvest_year = json_data[0]["harvest_year"]
-capacity = json_data[0]["capacity"]
-price_value = json_data[0]["price"]
-discount = json_data[0]["discount"]
-currency = json_data[0]["currency"]
-timestamp = json_data[0]["date_scraping"]
-location = json_data[0]["location"] """
-
-# Execute the INSERT statement
-
-#insert_prices = "INSERT INTO prices (price_value, discount, store_id, timestamp) VALUES (?, ?, ?, ?, ?, ?, ?)"
-#values = (price_value, discount, wine_id, store_id, timestamp)
-#cursor.execute(insert_prices, values)
 
 # Commit the changes and close the connection
 connection.commit()

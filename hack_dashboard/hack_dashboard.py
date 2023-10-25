@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+from st_aggrid import AgGrid
 
 st.set_page_config(
 	page_title = "Sogrape Wine Dashboard",
@@ -15,7 +16,7 @@ conn = st.experimental_connection('mysql', type='sql')
 
 @st.cache_data
 def carregar_wines_table():
-	tabela = conn.query('SELECT wine_name, harvest_year, capacity, location from wines;', ttl=600)
+	tabela = conn.query('select wines.wine_name, wines.harvest_year, wines.capacity, wines.location, AVG(prices.price_value) from wines right join prices on wines.wine_id = prices.wine_id group by wines.wine_id', ttl=600)
 	return tabela
 
 left_column, right_column = st.columns(2)
@@ -29,11 +30,13 @@ with left_column:
 		column_config={
 			"wine_name": "Nome",
 			"harvest_year": "Colheita",
-			"capacity": "Capacidade",
-			"location": "Origem"
+			"capacity": st.column_config.NumberColumn("Capacidade", format="%d ml"),
+			"location": "Origem",
+			"AVG(prices.price_value)": st.column_config.NumberColumn("Preço", format="€%.2f")
 		},
 		hide_index=True,
 	)
+	AgGrid(df)
 
 with right_column:
 	st.header("Details")
