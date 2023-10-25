@@ -19,7 +19,7 @@ Then execute the script with this command
 
     python3 main.py
 
-Go to the folder webscraping
+Go to the folder hack_dashboard
 
     cd ../hack_dashboard
 
