@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #666;
+            background-image: radial-gradient(circle 497px at 16.42% 70%, rgba(255, 255, 255, .2) 0%, transparent 100%), radial-gradient(circle 240px at 23% 70%, #222731 0%, #222731 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 20px); /* Adjusted height to move content up */
+            margin: 0;
+        }
+
+        .login-form {
+            background: #222731;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            z-index: 1;
+            text-align: center;
+            position: relative;
+            margin-top: -20px; /* Move content up by 20 pixels */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #777;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            background: #222731;
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px solid #B15533;
+            color: #ccc; /* Lighter shade of gray */
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #B15533;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #B15533;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Add margin for separation */
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img class="logo" src="https://partner.sogrape.pt/img/Logo_Sogrape.png?8874" alt="Sogrape Logo">
+    </div>
+    <div class="login-form">
+        <form>
+            <div class="form-group">
+                <label for="username"></label>
+                <input type="text" id="username" name="username" placeholder="Email address" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <button class="login-button" type="button" onclick="login()">LOGIN</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "sogrape" && password === "sogrape") {
+                window.location.href = 'http://localhost:8501';
+            }
+        }
+    </script>
+</body>
+</html>
