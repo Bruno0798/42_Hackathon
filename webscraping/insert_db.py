@@ -52,7 +52,8 @@ def upload_data(file):
             store_id = cursor.lastrowid
         wine_id = str(wine_id)
         store_id = str(store_id)
-        insert = ("INSERT INTO prices (wine_id, store_id, price_value, discount, currency, timestamp) VALUES ('"+wine_id+"' ,'"+store_id+"' ,'"+price_value+"' ,'"+discount+"' ,'"+currency+"' ,'"+timestamp+"')")
+        price_value = price_value.replace(',', '.')
+        insert = ("INSERT INTO prices (wine_id, store_id, price_value, discount, currency, timestamp) VALUES ('"+wine_id+"' ,'"+store_id+"' ,"+price_value+" ,'"+discount+"' ,'"+currency+"' ,'"+timestamp+"')")
         cursor.execute(insert)
 
     # Commit the changes and close the connection
