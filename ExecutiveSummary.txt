@@ -1,0 +1,11 @@
+The problem that was given to us for this Hackathon was to implement a web scraping system capable of collecting wine prices from national online stores.
+We've decided to approach this problem by dividing it in three main parts:
+  - Web Scraping Implementation capable of collecting wine prices from online stores.
+  - Creating a comprehensive database structure to store the retrieved data.
+  - Designing a user-friendly Dashboard to interact with the retrieved data.
+We ended up creating an application with a simple interface that retrieves specific wine data from online stores using web scraping technology.
+It works by retrieving the data and storing it in a database that we created using MySQL.
+We then used Python and SQL queries to search and display the needed data on our Dashboard for easy visualization.
+In conclusion, the solution that we've created is a simple and easy to use application that lets you display the wine prices organized by stores and within a certain time frame.
+The main highlight our solution is that it can be easily upgraded by adding further features that can be useful for the company using our application.
+# team 9
