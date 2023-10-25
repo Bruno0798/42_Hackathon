@@ -5,3 +5,16 @@ We used Python to search and get the mandatory data and we've made use of a MySQ
 It will be a user-friendly platform with great scalability...
 
 # team-9
+## How to start!
+
+First we need to go to the folder webscraping 
+
+    cd webscraping
+
+and execute the commandad
+
+    bash install_dependencies.sh
+
+Then execute the script with this command
+
+    python3 main.py
