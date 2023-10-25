@@ -7,7 +7,7 @@ It will be a user-friendly platform with great scalability...
 # team-9
 ## How to start!
 
-First we need to go to the folder webscraping 
+First we need to go to the folder webscraping
 
     cd webscraping
 
@@ -18,3 +18,11 @@ and execute the commandad
 Then execute the script with this command
 
     python3 main.py
+
+Go to the folder webscraping
+
+    cd ../hack_dashboard
+
+Then execute the streamlit with the Fron End
+
+    streamlit run hack_dashboard.py
