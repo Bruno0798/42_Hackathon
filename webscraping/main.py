@@ -12,6 +12,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 from termcolor import colored
 import os
+from insert_db import upload_data
 
 
 
@@ -36,7 +37,7 @@ def detect_currency(product_price):
         "EUR": [r"€", "eur", "euro"],
         "GBP": [r"£", "gbp", "pound"],
     }
-    
+
     product_price = product_price.lower()
 
     for currency_code, patterns in currency_patterns.items():
@@ -118,7 +119,7 @@ for i in range(3):
 			product_price_sy = price_element.text
 			product_price = product_price_sy.replace("\n", "").replace("€", "").strip()
 			currency = detect_currency(product_price_sy)
-                  
+
 
 			scraping_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 			table.add_row([product_name, "None", "750ml", product_price, "None", product_ean, currency, scraping_date, "Portugal"])
@@ -136,11 +137,12 @@ for i in range(3):
 				"location": location
 			}
 			existing_data.append(new_info)
-                  
+
 			if j == 3:
 				print(table)
 				print("\n")
 	# Write the combined data back to the JSON file
 		with open("data.json", "w", encoding="utf-8") as json_file:
 			json.dump(existing_data, json_file, ensure_ascii=False, indent=4)
+upload_data("data.json")
 driver.quit()
