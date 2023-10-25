@@ -1,0 +1,168 @@
+[[
+    {
+        "website_name": "Continente",
+        "url": "https://www.continente.pt",
+		"product_tile": "product-tile",
+		"product_description": "pwc-tile--description",
+		"product_image_link": "ct-tile-image",
+		"product_price": "ct-price-formatted",
+        "data": [
+            {
+                "product_name": "Mateus Rosé Original",
+				"product_ean": "5601012011500",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			{
+                "product_name": "Mateus Sparkling Brut Rosé",
+				"product_ean": "5601012001310",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Trinca Bolotas Tinto",
+				"product_ean": "5601012004427",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Papa Figos Branco",
+				"product_ean": "5601012011920",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            }
+        ]
+    },
+    {
+        "website_name": "El Corte Inglês",
+        "url": "https://www.elcorteingles.pt/supermercado",
+		"product_tile": "grid-item",
+		"product_description": "product_tile-description",
+		"product_price": "prices-price",
+        "data": [
+            {
+                "product_name": "Mateus Rosé Original",
+				"product_ean": "5601012011500",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			{
+                "product_name": "Mateus Sparkling Brut Rosé",
+				"product_ean": "5601012001310",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Trinca Bolotas Tinto",
+				"product_ean": "5601012004427",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Papa Figos Branco",
+				"product_ean": "5601012011920",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            }
+        ]
+    },
+	    {
+        "website_name": "Garrafeira Soares",
+        "url": "https://www.garrafeirasoares.pt/pt/",
+		"product_tile": "product-holder clearfix",
+		"product_description": "name clearfix",
+		"product_price": "price",
+        "data": [
+            {
+                "product_name": "Mateus Rosé Original",
+				"product_ean": "5601012011500",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			{
+                "product_name": "Mateus Sparkling Brut Rosé",
+				"product_ean": "5601012001310",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Trinca Bolotas Tinto",
+				"product_ean": "5601012004427",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Papa Figos Branco",
+				"product_ean": "5601012011920",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            }
+        ]
+    },
+		    {
+        "website_name": "Lidl",
+        "url": "https://www.garrafeirasoares.pt/pt/",
+		"product_tile": "product-holder clearfix",
+		"product_description": "name clearfix",
+		"product_price": "price",
+        "data": [
+            {
+                "product_name": "Mateus Rosé Original",
+				"product_ean": "5601012011500",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			{
+                "product_name": "Mateus Sparkling Brut Rosé",
+				"product_ean": "5601012001310",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Trinca Bolotas Tinto",
+				"product_ean": "5601012004427",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            },
+			            {
+                "product_name": "Papa Figos Branco",
+				"product_ean": "5601012011920",
+				"harvest_year" : "None",
+				"discount": "None",
+				"currency": "None",
+				"location": "Portugal"
+            }
+        ]
+    }
+]
+]
